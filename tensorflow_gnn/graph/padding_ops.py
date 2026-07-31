@@ -594,7 +594,7 @@ def _satisfies_size_constraints_internal(
     assert_ops.append(
         check_fn(
             _fold_constants(
-                lambda x, y: x | y, could_add_new_component,  # pyrefly: ignore[unsupported-operation]
+                lambda x, y: x | y, could_add_new_component,  # pyrefly: ignore[bad-argument-type, unsupported-operation]
                 _fold_constants(lambda x, y: x == y, padded_size,  # pyrefly: ignore[bad-argument-type]
                                 target_total_size)),
             (f'Could not pad <{entity_name}> {entity_type}. To do this, at'
@@ -632,7 +632,7 @@ def _satisfies_size_constraints_internal(
           total_sizes.total_num_nodes[incident_node_set_name])  # pyrefly: ignore[bad-argument-type]
       assert_ops.append(
           check_fn(
-              _fold_constants(lambda x, y: x | y, has_all_edges,  # pyrefly: ignore[unsupported-operation]
+              _fold_constants(lambda x, y: x | y, has_all_edges,  # pyrefly: ignore[bad-argument-type, unsupported-operation]
                               permits_new_incident_nodes),
               ('Could not create fake incident edges for the node set'
                f' {incident_node_set_name}. This could happen when the'
