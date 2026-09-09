@@ -1067,8 +1067,8 @@ class DictStreams:
               Iterable[Tuple[bytes, bytes, Example]],
               Iterable[Tuple[bytes, Example]]]]]:
     return {  # pyrefly: ignore[bad-return]
-        tfgnn.NODES: DictStreams.iter_nodes_via_schema(schema),
-        tfgnn.EDGES: DictStreams.iter_edges_via_schema(schema),
+        tfgnn.NODES: DictStreams.iter_nodes_via_schema(schema),  # pyrefly: ignore[bad-assignment]
+        tfgnn.EDGES: DictStreams.iter_edges_via_schema(schema),  # pyrefly: ignore[bad-assignment]
     }
 
 

@@ -398,7 +398,7 @@ class EvalDagTest(tf.test.TestCase, parameterized.TestCase):
       self.assertEqual(sampling_op.edge_set_name, 'a->b')
       if ids_dtype == tf.string:
         accessor = core.InMemStringKeyToBytesAccessor(
-            keys_to_values={b'a': b''}  # pyrefly: ignore[bad-argument-type]
+            keys_to_values={b'a': b''}  # pyrefly: ignore[bad-argument-type, bad-assignment]
         )
       else:
         accessor = core.InMemIntegerKeyToBytesAccessor(keys_to_values={0: b''})
